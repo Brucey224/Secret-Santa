@@ -41,10 +41,12 @@ for count, sub in enumerate(dicts):
 
 Z = [x for _,x in sorted(zip(randints,index))]
 
-for count, x in enumerate(Z):
-    user_key = x
-    assigned = x-1
-    db[count].append(db[assigned][1])  
+for count,x in enumerate(Z):
+    user = x
+    assigned = Z[count-1]
+    db[user].append(db[assigned][1])  
+
+print(Z)
 
 for count, x in enumerate(db):
     print(x[1]+", You have been assigned " + x[4] + " to gift them a present")
